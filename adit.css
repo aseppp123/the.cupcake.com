@@ -1,0 +1,681 @@
+*, html, body {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    overflow-x: auto; /* Biarkan bisa geser kalau perlu */
+    background: linear-gradient(to right, #ffe4e1, #fffaf0);
+}
+
+html {
+    min-width: 1000px;
+}
+
+/* Body */
+body {
+    background-color: white;
+    max-width: 100%;
+    overflow-x: hidden; /* Mencegah scroll horizontal */
+    margin:0 auto;
+}
+
+/* Container */
+.container {
+    width: 1000px;
+    background-color: yellow;
+    margin: auto;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    width: 1000px;
+    height: 40px;
+    align-items: center;
+    background-color: pink;
+    justify-content: space-around;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    padding-right: 30px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-family: Staatliches-Regular;
+    letter-spacing: 3px;
+    font-size: 10px;
+    color: black;
+    padding: 15px;
+}
+
+nav ul li a:hover {
+    color: mediumslateblue;
+    transition: 0.5s;
+}
+
+/* Logo */
+.logo img {
+    width:65px;
+    margin-top: 10px;
+}
+
+/* Tombol */
+.tombol a, .tborder a {
+    font-family: Montserrat;
+    letter-spacing: 2px;
+    background-color: #FF66C4;
+    padding: 6px 15px;
+    border-radius: 50px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    transition: 0.3s ease-in-out;
+}
+
+.tombol a:hover, .tborder a:hover {
+    background-color: #E03E75;
+    transform: scale(1.05);
+}
+
+/* Banner */
+.container .banner1 {
+    width: 1000px;
+    height: 500px;
+}
+
+.banner1 {
+    width: 100%;
+    max-width: 1000px;
+    height: 500px;
+    background-image: url('banerpepek.png');
+    background-size: cover; /* Bisa juga contain tergantung kebutuhan */
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.banner1 img {
+  width: 100%;
+  max-width: 1000px;
+  height: auto; /* atau height: 500px jika mau fixed */
+  object-fit: cover;
+  display: block; /* Hindari extra space */
+  margin: 0 auto; /* Jika perlu di tengah */
+}
+
+
+.container .banner1 .deskripsi {
+    position: relative;
+    left: 13px;
+    top: 150px;
+}
+
+.container .banner1 .deskripsi h2 {
+    color: #F2F0E4;
+    text-align: left;
+    width: 200px;
+    font-family: Staatliches-Regular;
+    font-size: 25px;
+    letter-spacing: 2.5px;
+}
+
+.container .banner1 .deskripsi p {
+    color: #F2F0E4;
+    text-align: justify;
+    width: 200px;
+    font-family: Staatliches-Regular;
+    font-size: 11px;
+}
+
+/* Tombol Order Now (tetap sama seperti awal) */
+.container .banner1 .deskripsi .tborder {
+    position: absolute;
+    bottom: 250px;
+    right: 850px;
+}
+
+.container .banner1 .deskripsi .tborder a {
+    font-family: Montserrat;
+    letter-spacing: 2px;
+    font-size: 15px;
+    color: white;
+    background-color: #FF66C4;
+    border-radius: 10px;
+    padding: 10px;
+    text-decoration: none;
+}
+
+/* Gallery Varian Rasa */
+.gallery {
+    width: 1040px;
+    height: auto;
+    background-color: #f4b6c2;
+    padding: 50px 0;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #f4b6c2, #e898a3);
+}
+
+
+.gallery h2 {
+    font-family: Staatliches-Regular;
+    font-size: 25px;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+/* Container Varian (Bisa Digulir) */
+.gallery .varian {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto; /* Biar bisa digeser */
+    scroll-snap-type: x mandatory; /* Biar scroll terasa smooth */
+    flex-wrap: nowrap;
+    padding: 10px;
+    scrollbar-width: none; /* Hilangkan scrollbar di Firefox */
+    white-space: nowrap; /* Biar semua tetap dalam satu baris */
+    padding-right: 40px;
+}
+
+.gallery .varian .card:last-child {
+    margin-right: 40px; /* Atur jarak dari sisi kanan */
+}
+
+.gallery .varian .card:first-child {
+    margin-left: 40px; /* Kasih jarak dari sisi kiri */
+}
+
+.gallery .varian::-webkit-scrollbar {
+    display: none; /* Hilangkan scrollbar di Chrome */
+}
+
+/* Styling Card */
+.gallery .varian .card {
+    flex: 0 0 auto;
+    width: 200px; /* Ukuran kotak tetap */
+    height: 280px; /* Tambahkan tinggi agar teks muat */
+    scroll-snap-align: center;
+    background: #Fff8f0;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 0.4s;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Pusatkan semua elemen dalam card */
+    justify-content: flex-start;
+}
+
+.gallery .varian .card:hover {
+    transform: scale(1.1);
+}
+
+/* Gambar dalam Card (DIPERBAIKI agar benar-benar di tengah) */
+.gallery .varian .card img {
+    width: 150px;
+    height: auto;
+    transition: 0.5s;
+    margin-bottom: 5px; /* Tambahkan jarak dari teks */
+}
+
+.gallery .varian .card:hover img {
+    transform: rotate(10deg);
+}
+
+/* Judul dalam Card */
+.gallery .varian .card h3 {
+    font-size: 16px;
+    margin-top: 5px;
+    flex-flow: 1;
+    font-family: 'nunito';
+}
+
+/* Deskripsi dalam Card (Fix Keluar Kotak) */
+.gallery .varian .card p {
+    font-size: 12px;
+    font-family:'Nunito' ;
+    color: #333;
+    max-height: 50px; /* Biar teks tidak keluar */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal; /* Biar tetap bisa wrap teks */
+    padding: 0 5px;
+    text-align: center; /* Biar teks tetap */
+    margin-top: 20px;
+    }
+    
+    .gallery h2, .gallery .varian .card h3 {
+    font-family: 'Nunito', sans-serif;
+}
+
+/* Navigasi Panah Varian */
+.varian-nav {
+    text-align: center;
+    margin-top: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.varian-nav span {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.varian-nav span:hover {
+    color: #ff4e88;
+}
+
+    
+/* Segment 4 (Best Seller) */
+.segment4 {
+    width: 1040px;
+    background-color: #F2F0E4;
+    text-align: center;
+    padding: 50px 5px;
+    max-width: 1040px;
+    background-image: radial-gradient(circle, rgba(200, 162, 124, 0.5) 2px, transparent 2px);
+    background-size: 10px 10px;
+}
+
+
+.segment4 h2 {
+    font-size: 25px;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.best-seller {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.segment4 h2, .best-desc h3 {
+    font-family: 'quicksand', serif !important;
+}
+
+.best-item {
+    display: flex;
+    align-items: center;
+    background: #ffc7c7;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 8px;
+    width: 450px;
+}
+
+.best-item img {
+    width: 120px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.best-desc {
+    text-align: left;
+    padding-left: 15px;
+}
+
+.best-item:last-child {
+    margin-right: 40px; /* Atur jarak supaya tidak mepet */
+}
+
+
+.best-desc h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    font-family: 'quicksand';
+}
+
+.best-desc p {
+    font-size: 12px;
+    color: #333;
+    margin-bottom: 10px;
+    font-family:'Nunito';
+}
+
+.best-desc a {
+    display: inline-block;
+    padding: 8px 15px;
+    font-size: 14px;
+    color: white;
+    background-color: #FF4E88;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.best-desc a:hover {
+    background-color: #E03E75;
+}
+
+/* Segment 5 - Kenapa Memilih Kami */
+.why-us {
+    padding: 40px 20px;
+    background-color: #ffc7c7;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    width: 1000px;
+    background: linear-gradient(to bottom, #ffc7c7, #f8d7da);
+    box-shadow: inset 0px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Subjudul */
+.why-us h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+/* Paragraf Deskripsi */
+.why-us p {
+    font-size: 16px;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto 40px auto;
+    line-height: 1.6;
+}
+
+/* Grid Layout */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Item */
+.why-item {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+/* Ikon */
+.why-icon {
+    font-size: 24px;
+    color: #e65100;
+    background-color: #fce4d6;
+    padding: 12px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/* Teks */
+.why-text {
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+}
+
+.why-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.why-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.why-desc {
+    font-size: 14px;
+    color: #666;
+}
+
+.why-container {
+    display: flex;
+    justify-content: center; /* Buat ke tengah */
+    flex-wrap: wrap; /* Supaya responsif */
+    gap: 20px; /* Jarak antar item */
+    text-align: center; /* Biar teksnya rata tengah */
+}
+
+.why-text > div:first-child {
+    font-weight: bold;
+    margin-bottom: 4px; /* Atur jarak sesuai kebutuhan */
+}
+
+
+/*segment6 testimonial*/
+.testimonial {
+    background-color: #fce4d6;
+    padding: 40px 20px;
+    text-align: center;
+    font-family: 'Quicksand', sans-serif;
+    width: 1000px;
+    background-image: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.3) 0px, rgba(255, 255, 255, 0.3) 2px, transparent 2px, transparent 20px),
+                      repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.3) 0px, rgba(255, 255, 255, 0.3) 2px, transparent 2px, transparent 20px);
+}
+
+.testimonial h2 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.testimonial-container {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding:20px 40px;
+    scrollbar-width: none;
+    max-width: 100%;
+}
+
+.testimonial-container::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonial-card {
+    flex: 0 0 auto;
+    width: 300px;
+    background: #Fff8f0;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    scroll-snap-align: center;
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.testimonial-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #444;
+}
+
+.testimonial-card p {
+    font-size: 14px;
+    color: #666;
+}
+
+.testimonial-nav {
+    margin-top: 20px;
+}
+
+.testimonial-nav span {
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.testimonial-nav span:hover {
+    color: #ff4e88;
+}
+
+/* Animasi Slide-In untuk Testimonial */
+.testimonial-card {
+    opacity: 0;
+    transform: translateX(50px); /* Geser ke kanan dulu */
+    animation: slideIn 0.8s ease-out forwards;
+}
+
+/* Animasi Keyframes */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Delay supaya muncul satu per satu */
+.testimonial-card:nth-child(1) { animation-delay: 0.2s; }
+.testimonial-card:nth-child(2) { animation-delay: 0.4s; }
+.testimonial-card:nth-child(3) { animation-delay: 0.6s; }
+.testimonial-card:nth-child(4) { animation-delay: 0.8s; }
+.testimonial-card:nth-child(5) { animation-delay: 1s; }
+
+.footer1 {
+    background-color: #e6a4b4; /* Sesuai tema */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 160px;
+    width: 1040px;
+    position: relative;
+    background: linear-gradient(to bottom, #e6a4b4, #f5b0b0);
+}
+
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: white;
+    text-decoration: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.instagram {
+    background: linear-gradient(45deg, #fccc63, #bc1888, #e4405f);
+}
+
+.facebook {
+    background: #1877f2;
+}
+
+.whatsapp {
+    background: #25d366;
+}
+
+.email {
+  background: #ff6b6b;
+}
+
+
+.icon:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    animation: bounce 0.5s ease infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(1.2) translateY(0);
+    }
+    100% {
+        transform: scale(1.2) translateY(-5px);
+    }
+}
+.footer-title {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    font-family:'Playfair display', sans-serif ;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.social-icons {
+    display: flex;
+    gap: 50px; /* Lebih renggang */
+    justify-content: center;
+    margin-top: -8px;
+}
+
+.social-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px; /* Beri jarak antara ikon dan teks */
+}
+
+.social-item p {
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    color: #444;
+    margin: 0; /* Hilangkan margin default */
+}
+
+
+  
+   .footer {
+    width: 100%;
+    max-width: 1040px;
+    background: linear-gradient(to right, #ffc7c7, #f4b6c2); /* Gradasi biar lebih estetik */
+    text-align: center;
+    padding: 5px;
+    font-size: 14px;
+    font-family: 'Nunito', sans-serif;
+    color: #444; /* Warna teks lebih soft */
+    border-radius: 0 0 10px 10px; /* Sudut melengkung atas */
+    box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1); /* Efek shadow biar nggak terlalu flat */
+}
+.footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1); /* Garis tipis biar lebih rapi */
+}
+
+html {
+ scroll-behavior: smooth;
+}
+
+/* Font Face */
+@font-face {
+    font-family: Staatliches-Regular;
+    src: url(Staatliches-Regular.ttf);
+}
